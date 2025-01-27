@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cli-for-spring-jpa:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar</output-path>
+    <root id="archive" name="cli-for-spring-jpa.jar">
+      <element id="module-output" name="cli-for-spring-jpa" />
+    </root>
+  </artifact>
+</component>
