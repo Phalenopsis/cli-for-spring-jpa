@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2sB000qwQnsB5pW9HzcpMwpmIP9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,7 +42,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "project-validator",
+    "git-widget-placeholder": "feature/entity-generator",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/nlero/Documents/WCS/CDA/spring/cli-for-spring-jpa/src/main/java/org/example/Main.java",
@@ -51,7 +51,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestCaseManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.Main" />
       <module name="cli-for-spring-jpa" />
@@ -65,8 +65,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestCaseManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseManager.testSwitchToKebabCase_PascalToKebab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
+      <option name="METHOD_NAME" value="testSwitchToKebabCase_PascalToKebab" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCaseManager" />
+        <item itemvalue="JUnit.TestCaseManager.testSwitchToKebabCase_PascalToKebab" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
