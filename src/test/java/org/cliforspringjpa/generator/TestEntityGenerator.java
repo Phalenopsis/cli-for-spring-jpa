@@ -196,9 +196,11 @@ public class TestEntityGenerator {
 
         authorGenerator.generateLines();
 
-        boolean isIn = authorGenerator.getImports().contains("org.cliforspringjpa.entity.Book");
+        boolean isIn = authorGenerator.getImports().contains("import org.cliforspringjpa.entity.Book;");
+        boolean isListIn = authorGenerator.getImports().contains("import java.util.List;");
         System.out.println(authorGenerator.getImports());
         Assertions.assertTrue(isIn);
+        Assertions.assertTrue(isListIn);
     }
 
 

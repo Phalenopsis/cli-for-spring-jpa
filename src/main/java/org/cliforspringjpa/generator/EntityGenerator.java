@@ -38,7 +38,11 @@ public class EntityGenerator extends Generator{
         for(Attribute attribute: entity.getSet()) {
             if(attribute.getRelationship() != Relationship.NO_RELATION)
                 fileLines.addImport(getImport(attribute));
-            fileLines.addAttribute(attribute.getName(), attributeLineGenerator.generateAttribute(attribute));
+            if(attribute.getRelationship().equals(Relationship.ONE_TO_MANY)
+                    || attribute.getRelationship().equals(Relationship.MANY_TO_MANY)) {
+                fileLines.addImport("import java.util.List;");
+            }
+                fileLines.addAttribute(attribute.getName(), attributeLineGenerator.generateAttribute(attribute));
         }
     }
 
@@ -46,14 +50,12 @@ public class EntityGenerator extends Generator{
         Project project = Project.getInstance();
         String className = attribute.getType();
 
-        return project.getEntityFileImport(className);
+        return "import " + project.getEntityFileImport(className) + ";";
     }
 
     @Override
     protected void generateClassMethods() {
-
+        EntityMethodsGenerator generator = new EntityMethodsGenerator(entity);
+        fileLines.addMethods(generator.generateGettersAndSetters());
     }
-
-
-
 }
