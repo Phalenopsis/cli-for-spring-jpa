@@ -6,22 +6,23 @@ import org.cliforspringjpa.explorer.PomXmlExplorer;
 import java.io.File;
 import java.util.Objects;
 
-public class Project {
-    private static Project instance;
+public class ProjectPath {
+    private static ProjectPath instance;
 
     private final String userPath;
     private final String packagePath;
     private final PackageName packageName;
+    private boolean isEntityArchitecture;
 
-    public static Project getInstance() throws SpringProjectException {
+    public static ProjectPath getInstance() throws SpringProjectException {
         if(Objects.isNull(instance)) {
             String packageNameString = PomXmlExplorer.getInstance().getProjectPackage();
-            instance = new Project(packageNameString);
+            instance = new ProjectPath(packageNameString);
         }
         return instance;
     }
 
-    private Project(String pPackageName) {
+    private ProjectPath(String pPackageName) {
         packageName = new PackageName(pPackageName);
         userPath = System.getProperty("user.dir");
         packagePath = getAbsoluteSrcPath() + File.separator + "main" +
@@ -34,5 +35,21 @@ public class Project {
 
     public String getAbsoluteMainPackagePath() {
         return packagePath;
+    }
+
+    public boolean isEntityArchitecture() {
+        return isEntityArchitecture;
+    }
+
+    public void setEntityArchitecture(boolean entityArchitecture) {
+        isEntityArchitecture = entityArchitecture;
+    }
+
+    public String getPackageName() {
+        return packageName.getCompleteName();
+    }
+
+    public String getJavaPath() {
+        return getAbsoluteSrcPath() + File.separator + "java";
     }
 }
