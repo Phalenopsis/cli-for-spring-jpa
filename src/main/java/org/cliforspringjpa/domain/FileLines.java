@@ -45,6 +45,10 @@ public class FileLines {
         return methods;
     }
 
+    public void addMethods(List<String> methodsLines) {
+        methods.addAll(methodsLines);
+    }
+
     public void addAttribute(String attribute, List<String> lines) {
         attributes.put(attribute, lines);
     }
