@@ -1,5 +1,7 @@
 package org.cliforspringjpa.utils;
 
+import java.util.regex.Pattern;
+
 public class CaseManager {
     public static boolean isPascalCase(String string) {
         return string.matches("[A-Z][a-z0-9A-Z]*");
@@ -27,7 +29,7 @@ public class CaseManager {
         String camelString = string.substring(0, 1).toLowerCase() + string.substring(1);
         boolean mustUp = false;
         for(char c: camelString.toCharArray()) {
-            if(c == '-') {
+            if(c == '-' || c == '_') {
                 mustUp = true;
             } else if (mustUp) {
                 str = str + Character.toUpperCase(c);
@@ -42,5 +44,13 @@ public class CaseManager {
     public static String switchToSnakeCase(String name) {
         String kebabCase = switchToKebabCase(name);
         return kebabCase.replaceAll("-", "_");
+    }
+
+    public static String switchToPascalCase(String name) {
+        String str = name;
+        if(!isCamelCase(name)) {
+            str = switchToCamelCase(str);
+        }
+        return  Pattern.compile("^.").matcher(str).replaceFirst(m -> m.group().toUpperCase());
     }
 }

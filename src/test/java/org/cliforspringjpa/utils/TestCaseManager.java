@@ -51,4 +51,28 @@ public class TestCaseManager {
         String result = CaseManager.switchToSnakeCase(pascalCase);
         Assertions.assertEquals("pascal_case_string", result);
     }
+
+    @Test
+    public void testSwitchToPascalCase_FromKebabCase() {
+        String kebabCase = "kebab-case";
+        String result = CaseManager.switchToPascalCase(kebabCase);
+
+        Assertions.assertEquals("KebabCase", result);
+    }
+
+    @Test
+    public void testSwitchToPascalCase_FromSnakeCase() {
+        String snakeCase = "snake_case";
+        String result = CaseManager.switchToPascalCase(snakeCase);
+
+        Assertions.assertEquals("SnakeCase", result);
+    }
+
+    @Test
+    public void testSwitchToPascalCase_CamelCase() {
+        String kebabCase = "camelCase";
+        String result = CaseManager.switchToPascalCase(kebabCase);
+
+        Assertions.assertEquals("CamelCase", result);
+    }
 }
