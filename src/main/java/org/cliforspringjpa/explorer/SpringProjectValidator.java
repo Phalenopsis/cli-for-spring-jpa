@@ -1,6 +1,6 @@
 package org.cliforspringjpa.explorer;
 
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.domain.ProjectPath;
 import org.cliforspringjpa.exception.SpringProjectException;
 
 import java.io.File;
@@ -27,7 +27,7 @@ public class SpringProjectValidator {
     }
 
     private void verifySrcDir() throws SpringProjectException {
-        String srcDirPath = Project.getInstance().getAbsoluteSrcPath();
+        String srcDirPath = ProjectPath.getInstance().getAbsoluteSrcPath();
         File srcDirFile = new File(srcDirPath);
         if(!(srcDirFile.exists() && srcDirFile.isDirectory())) {
             throw new SpringProjectException("src directory does not exists.");
@@ -35,7 +35,7 @@ public class SpringProjectValidator {
     }
 
     private void verifyPackageDir() throws SpringProjectException {
-        String packageDirPath = Project.getInstance().getAbsoluteMainPackagePath();
+        String packageDirPath = ProjectPath.getInstance().getAbsoluteMainPackagePath();
         System.out.println(packageDirPath);
         File srcDirFile = new File(packageDirPath);
         if(!(srcDirFile.exists() && srcDirFile.isDirectory())) {

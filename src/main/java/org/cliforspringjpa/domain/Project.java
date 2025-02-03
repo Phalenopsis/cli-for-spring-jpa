@@ -1,38 +1,40 @@
 package org.cliforspringjpa.domain;
 
 import org.cliforspringjpa.exception.SpringProjectException;
-import org.cliforspringjpa.explorer.PomXmlExplorer;
+import org.cliforspringjpa.generator.EntityGenerator;
+import org.cliforspringjpa.generator.Generator;
 
-import java.io.File;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Project {
     private static Project instance;
 
-    private final String userPath;
-    private final String packagePath;
-    private final PackageName packageName;
+    private HashMap<String, Generator> generators = new HashMap<>();
 
-    public static Project getInstance() throws SpringProjectException {
+    public static Project getInstance() {
         if(Objects.isNull(instance)) {
-            String packageNameString = PomXmlExplorer.getInstance().getProjectPackage();
-            instance = new Project(packageNameString);
+            instance = new Project();
         }
         return instance;
     }
 
-    private Project(String pPackageName) {
-        packageName = new PackageName(pPackageName);
-        userPath = System.getProperty("user.dir");
-        packagePath = getAbsoluteSrcPath() + File.separator + "main" +
-                File.separator + "java" + File.separator + packageName.getPath();
+    private Project() { }
+
+    public void addGenerator(Generator generator) {
+        generators.put(generator.getClassName(), generator);
     }
 
-    public String getAbsoluteSrcPath() {
-        return userPath + File.separator + "src";
+    public Generator getGenerator(String generatorClassName) {
+        return generators.get(generatorClassName);
     }
 
-    public String getAbsoluteMainPackagePath() {
-        return packagePath;
+    public String getEntityFileImport(String className) throws SpringProjectException {
+        EntityGenerator entityGenerator = (EntityGenerator) generators.get(className);
+        return entityGenerator.getPackageName() + "." + className;
+    }
+
+    public void reset() {
+        generators = new HashMap<>();
     }
 }
