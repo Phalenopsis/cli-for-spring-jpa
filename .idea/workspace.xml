@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +39,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_CamelCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_FromKebabCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_FromSnakeCase.executor": "Run",
+    "JUnit.TestEntityGenerator.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateBasicAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateIdAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToMany.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToManyAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToOne.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToOneAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToManyAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToOneAttribute_MasterRelationship.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToOneAttribute_SlaveRelationship.executor": "Run",
+    "JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture.executor": "Run",
+    "JUnit.TestEntityGenerator.testGetAttributeImport_EntityArchitecture.executor": "Run",
+    "JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters.executor": "Run",
+    "JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship.executor": "Run",
+    "JUnit.TestGenerator.executor": "Run",
+    "JUnit.TestGenerator.testGetClassName_EntityGenerator.executor": "Run",
+    "JUnit.TestGenerator.testGetDirectoryPath.executor": "Run",
+    "JUnit.TestGenerator.testGetDirectoryPath_ControllerArchitecture.executor": "Run",
+    "JUnit.TestGenerator.testGetPackageName_ControllerArchitecture.executor": "Run",
+    "JUnit.TestGenerator.testGetPackageName_EntityArchitecture.executor": "Run",
+    "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature/entity-generator",
@@ -51,21 +75,8 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestCaseManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.Main" />
-      <module name="cli-for-spring-jpa" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.cliforspringjpa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestCaseManager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture">
+    <configuration name="TestCaseManager.testSwitchToPascalCase_CamelCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cli-for-spring-jpa" />
       <extension name="coverage">
         <pattern>
@@ -75,22 +86,70 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
+      <option name="METHOD_NAME" value="testSwitchToPascalCase_CamelCase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntityGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityGenerator" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCaseManager.testSwitchToKebabCase_PascalToKebab" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cli-for-spring-jpa" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.cliforspringjpa.utils.*" />
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
-      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
-      <option name="METHOD_NAME" value="testSwitchToKebabCase_PascalToKebab" />
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityGenerator" />
+      <option name="METHOD_NAME" value="testGetAttributeImport_ControllerArchitecture" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntityMethodsGenerator.testGenerateGettersAndSetters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityMethodsGenerator" />
+      <option name="METHOD_NAME" value="testGenerateGettersAndSetters" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityMethodsGenerator" />
+      <option name="METHOD_NAME" value="testGenerateGettersAndSetters_WithManyRelationship" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -98,9 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestCaseManager" />
-        <item itemvalue="JUnit.TestCaseManager.testSwitchToKebabCase_PascalToKebab" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" />
+        <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" />
+        <item itemvalue="JUnit.TestEntityGenerator" />
+        <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters" />
+        <item itemvalue="JUnit.TestCaseManager.testSwitchToPascalCase_CamelCase" />
       </list>
     </recent_temporary>
   </component>
