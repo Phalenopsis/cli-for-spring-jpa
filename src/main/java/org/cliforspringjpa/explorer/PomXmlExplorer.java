@@ -32,6 +32,7 @@ public class PomXmlExplorer {
         if(!(pomXmlFile.exists() && !pomXmlFile.isDirectory())) {
             throw new SpringProjectException("pom.xml file does not exists.");
         }
+        //TODO verify Spring and jpa dependencies
     }
 
     public String getProjectPackage() throws SpringProjectException {
@@ -41,9 +42,14 @@ public class PomXmlExplorer {
         ) {
             String line;
             while(Objects.nonNull(line = reader.readLine())) {
+                boolean isInParentSection = false;
+                String OPEN_PARENT_TAG = "<parent>";
+                String CLOSE_PARENT_TAG = "</parent>";
+                if (line.contains(OPEN_PARENT_TAG)) isInParentSection = true;
+                if (line.contains(CLOSE_PARENT_TAG)) isInParentSection = false
                 String OPENING_TAG = "<groupId>";
                 String CLOSING_TAG = "</groupId>";
-                if(line.contains(OPENING_TAG) && line.contains(CLOSING_TAG) ) {
+                if(!isInParentSection && line.contains(OPENING_TAG) && line.contains(CLOSING_TAG) ) {
                     String lineWithoutOpening = line.replace(OPENING_TAG, "");
                     packageName = lineWithoutOpening.replace(CLOSING_TAG, "").trim();
                     break;
