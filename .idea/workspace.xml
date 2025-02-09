@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,9 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2sB000qwQnsB5pW9HzcpMwpmIP9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,6 +42,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.TestCLIOrchestrator.executor": "Run",
+    "JUnit.TestCaseManager.testIsPascalCase_EmptyString.executor": "Run",
     "JUnit.TestCaseManager.testSwitchToPascalCase.executor": "Run",
     "JUnit.TestCaseManager.testSwitchToPascalCase_CamelCase.executor": "Run",
     "JUnit.TestCaseManager.testSwitchToPascalCase_FromKebabCase.executor": "Run",
@@ -63,20 +68,40 @@
     "JUnit.TestGenerator.testGetDirectoryPath_ControllerArchitecture.executor": "Run",
     "JUnit.TestGenerator.testGetPackageName_ControllerArchitecture.executor": "Run",
     "JUnit.TestGenerator.testGetPackageName_EntityArchitecture.executor": "Run",
+    "JUnit.TestInputOrder.executor": "Run",
     "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/entity-generator",
+    "git-widget-placeholder": "feature/entity-cli",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nlero/Documents/WCS/CDA/spring/testcli",
     "onboarding.tips.debug.path": "C:/Users/nlero/Documents/WCS/CDA/spring/cli-for-spring-jpa/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture">
-    <configuration name="TestCaseManager.testSwitchToPascalCase_CamelCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.cliforspringjpa.domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestInputOrder">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.Main" />
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseManager.testIsPascalCase_EmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cli-for-spring-jpa" />
       <extension name="coverage">
         <pattern>
@@ -86,23 +111,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
-      <option name="METHOD_NAME" value="testSwitchToPascalCase_CamelCase" />
+      <option name="METHOD_NAME" value="testIsPascalCase_EmptyString" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestEntityGenerator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cli-for-spring-jpa" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
-      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityGenerator" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -118,22 +128,6 @@
       <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityGenerator" />
       <option name="METHOD_NAME" value="testGetAttributeImport_ControllerArchitecture" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestEntityMethodsGenerator.testGenerateGettersAndSetters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="cli-for-spring-jpa" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
-      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityMethodsGenerator" />
-      <option name="METHOD_NAME" value="testGenerateGettersAndSetters" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,13 +149,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestInputOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.domain" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.domain.TestInputOrder" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestInputOrder" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestCaseManager.testIsPascalCase_EmptyString" />
         <item itemvalue="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" />
         <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" />
-        <item itemvalue="JUnit.TestEntityGenerator" />
-        <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters" />
-        <item itemvalue="JUnit.TestCaseManager.testSwitchToPascalCase_CamelCase" />
       </list>
     </recent_temporary>
   </component>
@@ -175,16 +184,5 @@
       <updated>1737913436072</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
