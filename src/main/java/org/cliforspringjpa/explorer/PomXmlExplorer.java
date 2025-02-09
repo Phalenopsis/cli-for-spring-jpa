@@ -46,7 +46,7 @@ public class PomXmlExplorer {
                 String OPEN_PARENT_TAG = "<parent>";
                 String CLOSE_PARENT_TAG = "</parent>";
                 if (line.contains(OPEN_PARENT_TAG)) isInParentSection = true;
-                if (line.contains(CLOSE_PARENT_TAG)) isInParentSection = false
+                if (line.contains(CLOSE_PARENT_TAG)) isInParentSection = false;
                 String OPENING_TAG = "<groupId>";
                 String CLOSING_TAG = "</groupId>";
                 if(!isInParentSection && line.contains(OPENING_TAG) && line.contains(CLOSING_TAG) ) {
