@@ -75,4 +75,11 @@ public class TestCaseManager {
 
         Assertions.assertEquals("CamelCase", result);
     }
+
+    @Test
+    public void testIsPascalCase_EmptyString() {
+        String str = "";
+        boolean isPascalCase = CaseManager.isPascalCase(str);
+        Assertions.assertFalse(isPascalCase);
+    }
 }

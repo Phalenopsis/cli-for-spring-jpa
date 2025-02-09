@@ -1,9 +1,14 @@
 package org.cliforspringjpa;
 
+import org.cliforspringjpa.cli.CLIOrchestrator;
+import org.cliforspringjpa.exception.ExitException;
+import org.cliforspringjpa.exception.NoScannerException;
 import org.cliforspringjpa.exception.SpringProjectException;
 import org.cliforspringjpa.explorer.SpringProjectValidator;
 
-public class Main {
+import java.util.Scanner;
+
+public class        Main {
     public static void main(String[] args) {
         boolean runing = true;
         try {
@@ -15,7 +20,13 @@ public class Main {
         }
 
         if(runing) {
-            //TODO
+            try(Scanner scanner = new Scanner(System.in)) {
+                CLIOrchestrator.getInstance(scanner).run();
+            } catch (SpringProjectException | NoScannerException e) {
+                throw new RuntimeException(e);
+            } catch (ExitException e) {
+                System.out.println("Good bye");
+            }
         }
     }
 }

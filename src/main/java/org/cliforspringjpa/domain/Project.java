@@ -4,13 +4,14 @@ import org.cliforspringjpa.exception.SpringProjectException;
 import org.cliforspringjpa.generator.EntityGenerator;
 import org.cliforspringjpa.generator.Generator;
 
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 public class Project {
     private static Project instance;
 
     private HashMap<String, Generator> generators = new HashMap<>();
+    private HashMap<String, Entity> entities = new HashMap<>();
+    private final Set<String> BASIC_TYPES = Set.of("String", "Long", "double", "int");
 
     public static Project getInstance() {
         if(Objects.isNull(instance)) {
@@ -35,6 +36,30 @@ public class Project {
     }
 
     public void reset() {
+        entities = new HashMap<>();
         generators = new HashMap<>();
+    }
+
+    public void addEntity(Entity entity) {
+        entities.put(entity.getName(), entity);
+    }
+
+    private void generateGenerators() {
+        for(Entity entity: entities.values()) {
+            EntityGenerator generator = new EntityGenerator(entity);
+            addGenerator(generator);
+        }
+    }
+
+    public Set<String> getEntitiesList() {
+        return entities.keySet();
+    }
+
+    public Set<String> getBASIC_TYPES() {
+        return BASIC_TYPES;
+    }
+
+    public Entity getEntity(String entityName) {
+        return entities.get(entityName);
     }
 }
