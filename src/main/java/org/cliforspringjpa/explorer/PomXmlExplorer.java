@@ -41,8 +41,8 @@ public class PomXmlExplorer {
                 BufferedReader reader = new BufferedReader(new FileReader(pomXmlPath))
         ) {
             String line;
+            boolean isInParentSection = false;
             while(Objects.nonNull(line = reader.readLine())) {
-                boolean isInParentSection = false;
                 String OPEN_PARENT_TAG = "<parent>";
                 String CLOSE_PARENT_TAG = "</parent>";
                 if (line.contains(OPEN_PARENT_TAG)) isInParentSection = true;
