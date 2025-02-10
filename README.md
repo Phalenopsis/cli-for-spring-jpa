@@ -3,6 +3,8 @@ It is a CLI (Command Line Interface) for Spring-JPA, like symfony CLI (yes, i co
 
 ## First step : Launch CLI
 Download jar file : https://github.com/Phalenopsis/cli-for-spring-jpa/blob/dev/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar
+Copy this in your project directory
+Launch it via terminal with ```java -jar cli-for-spring-jpa.jar``` 
 
 ## Second step : Choose your architecture
 It's explain in terminal
