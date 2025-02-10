@@ -65,7 +65,8 @@ public class Project {
         return entities.get(entityName);
     }
 
-    public void generateFile() throws IOException, SpringProjectException {
+    public boolean generateFile() throws IOException, SpringProjectException {
+        boolean hasGenerated = false;
         generateGenerators();
         for(Generator generator: generators.values()) {
             generator.generateLines();
@@ -75,6 +76,8 @@ public class Project {
             FileCreator creator = new FileCreator(generator.getFileLines());
             creator.createDirectory();
             creator.createFile();
+            hasGenerated = true;
         }
+        return hasGenerated;
     }
 }
