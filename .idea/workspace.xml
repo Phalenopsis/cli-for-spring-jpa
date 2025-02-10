@@ -12,6 +12,7 @@
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
     "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/entity-cli",
+    "git-widget-placeholder": "feature/file-creator",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/nlero/Documents/WCS/CDA/spring/testcli",
@@ -87,7 +88,7 @@
       <recent name="org.cliforspringjpa.domain" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestInputOrder">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.Main" />
       <module name="cli-for-spring-jpa" />
@@ -166,8 +167,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestInputOrder" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestInputOrder" />
         <item itemvalue="JUnit.TestCaseManager.testIsPascalCase_EmptyString" />
         <item itemvalue="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" />
         <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" />

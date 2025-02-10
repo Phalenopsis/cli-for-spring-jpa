@@ -1,22 +1,19 @@
 package org.cliforspringjpa.domain;
 
-import java.io.File;
-
 public class PackageName {
-    private final String extension;
-    private final String name;
+    private final String packageName;
+    private final String projectName;
 
-    public PackageName(String packageName) {
-        String[] arr = packageName.split("\\.");
-        extension = arr[0];
-        name = arr[1];
+    public PackageName(String pPackageName, String pProjectName) {
+        packageName = pPackageName;
+        projectName = pProjectName;
+
+    }
+    public String getProjectName() {
+        return projectName;
     }
 
-    public String getCompleteName() {
-        return extension + "." + name;
-    }
-
-    public String getPath() {
-        return extension + File.separator + name;
+    public String getPackageName() {
+        return packageName;
     }
 }

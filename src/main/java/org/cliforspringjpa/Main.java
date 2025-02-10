@@ -1,11 +1,13 @@
 package org.cliforspringjpa;
 
 import org.cliforspringjpa.cli.CLIOrchestrator;
+import org.cliforspringjpa.domain.Project;
 import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;
 import org.cliforspringjpa.exception.SpringProjectException;
 import org.cliforspringjpa.explorer.SpringProjectValidator;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class        Main {
@@ -28,5 +30,17 @@ public class        Main {
                 System.out.println("Good bye");
             }
         }
+
+        try {
+            if(Project.getInstance().generateFile()) {
+                System.out.println("Files generated");
+            }
+        } catch (IOException e) {
+            System.out.println("Unable to generate files");
+            throw new RuntimeException(e);
+        } catch (SpringProjectException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

@@ -1,9 +1,11 @@
 package org.cliforspringjpa.domain;
 
 import org.cliforspringjpa.exception.SpringProjectException;
+import org.cliforspringjpa.filecreator.FileCreator;
 import org.cliforspringjpa.generator.EntityGenerator;
 import org.cliforspringjpa.generator.Generator;
 
+import java.io.IOException;
 import java.util.*;
 
 public class Project {
@@ -61,5 +63,21 @@ public class Project {
 
     public Entity getEntity(String entityName) {
         return entities.get(entityName);
+    }
+
+    public boolean generateFile() throws IOException, SpringProjectException {
+        boolean hasGenerated = false;
+        generateGenerators();
+        for(Generator generator: generators.values()) {
+            generator.generateLines();
+        }
+
+        for(Generator generator: generators.values()) {
+            FileCreator creator = new FileCreator(generator.getFileLines());
+            creator.createDirectory();
+            creator.createFile();
+            hasGenerated = true;
+        }
+        return hasGenerated;
     }
 }
