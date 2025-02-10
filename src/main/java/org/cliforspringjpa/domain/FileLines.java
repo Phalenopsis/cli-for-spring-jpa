@@ -3,18 +3,24 @@ package org.cliforspringjpa.domain;
 import java.util.*;
 
 public class FileLines {
+    private final String className;
+    private String directoryPath;
     private String packageName;
-    private Set<String> imports = new HashSet<>();
+    private final Set<String> imports = new HashSet<>();
     private List<String> classDeclaration = new ArrayList<>();
-    private HashMap<String, List<String>> attributes = new HashMap<>();
-    private List<String> methods = new ArrayList<>();
+    private final HashMap<String, List<String>> attributes = new HashMap<>();
+    private final List<String> methods = new ArrayList<>();
 
-    public FileLines() {
+    public FileLines(String pClassName) {
+        className = pClassName;
+    }
 
+    public void setDirectoryPath(String pDirectoryPath) {
+        directoryPath = pDirectoryPath;
     }
 
     public void setPackageName(String pPackageName) {
-        packageName = pPackageName;
+        packageName = pPackageName + ";";
     }
 
     public void addImport(String pImport) {
@@ -55,5 +61,13 @@ public class FileLines {
 
     public void setClassDeclaration(List<String> classDeclaration) {
         this.classDeclaration = classDeclaration;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public String getDirectoryPath() {
+        return directoryPath;
     }
 }
