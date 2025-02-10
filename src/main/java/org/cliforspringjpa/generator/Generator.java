@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Generator {
-    protected FileLines fileLines = new FileLines();
+    protected FileLines fileLines;
     protected Entity entity;
     protected String generatorType;
 
     public Generator(Entity pEntity) {
         entity = pEntity;
         setGeneratorType();
+        fileLines = new FileLines(entity.getName());
     }
 
     public String getDirectoryPath() throws SpringProjectException {
@@ -74,11 +75,11 @@ public abstract class Generator {
 
     public void generateLines() throws SpringProjectException {
         fileLines.setPackageName(getPackageName());
+        fileLines.setDirectoryPath(getAbsolutePath());
         fileLines.addImports(generateImports());
         fileLines.setClassDeclaration(generateClassDeclaration());
         generateClassAttributes();
-
-        //TODO : fill the returned list
+        generateClassMethods();
     }
 
     public List<String> getClassDeclarationLines() {
@@ -91,6 +92,10 @@ public abstract class Generator {
 
     public Set<String> getImports() {
         return fileLines.getImports();
+    }
+
+    public FileLines getFileLines() {
+        return fileLines;
     }
 
     protected abstract Set<String> generateImports();
