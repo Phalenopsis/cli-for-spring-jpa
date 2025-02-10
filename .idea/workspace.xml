@@ -1,35 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="cli-for-spring-jpa:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="" />
+    <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2sB000qwQnsB5pW9HzcpMwpmIP9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.TestCLIOrchestrator.executor": "Run",
+    "JUnit.TestCaseManager.testIsPascalCase_EmptyString.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_CamelCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_FromKebabCase.executor": "Run",
+    "JUnit.TestCaseManager.testSwitchToPascalCase_FromSnakeCase.executor": "Run",
+    "JUnit.TestEntityGenerator.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateBasicAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateIdAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToMany.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToManyAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToOne.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateManyToOneAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToManyAttribute.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToOneAttribute_MasterRelationship.executor": "Run",
+    "JUnit.TestEntityGenerator.testGenerateOneToOneAttribute_SlaveRelationship.executor": "Run",
+    "JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture.executor": "Run",
+    "JUnit.TestEntityGenerator.testGetAttributeImport_EntityArchitecture.executor": "Run",
+    "JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters.executor": "Run",
+    "JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship.executor": "Run",
+    "JUnit.TestGenerator.executor": "Run",
+    "JUnit.TestGenerator.testGetClassName_EntityGenerator.executor": "Run",
+    "JUnit.TestGenerator.testGetDirectoryPath.executor": "Run",
+    "JUnit.TestGenerator.testGetDirectoryPath_ControllerArchitecture.executor": "Run",
+    "JUnit.TestGenerator.testGetPackageName_ControllerArchitecture.executor": "Run",
+    "JUnit.TestGenerator.testGetPackageName_EntityArchitecture.executor": "Run",
+    "JUnit.TestInputOrder.executor": "Run",
+    "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature/file-creator",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/nlero/Documents/WCS/CDA/spring/cli-for-spring-jpa/src/main/java/org/example/Main.java"
+    "last_opened_file_path": "C:/Users/nlero/Documents/WCS/CDA/spring/testcli",
+    "onboarding.tips.debug.path": "C:/Users/nlero/Documents/WCS/CDA/spring/cli-for-spring-jpa/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.cliforspringjpa.domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.Main" />
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestCaseManager.testIsPascalCase_EmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.utils.TestCaseManager" />
+      <option name="METHOD_NAME" value="testIsPascalCase_EmptyString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityGenerator" />
+      <option name="METHOD_NAME" value="testGetAttributeImport_ControllerArchitecture" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.generator" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.generator.TestEntityMethodsGenerator" />
+      <option name="METHOD_NAME" value="testGenerateGettersAndSetters_WithManyRelationship" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestInputOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cli-for-spring-jpa" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.cliforspringjpa.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.cliforspringjpa.domain" />
+      <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.domain.TestInputOrder" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TestInputOrder" />
+        <item itemvalue="JUnit.TestCaseManager.testIsPascalCase_EmptyString" />
+        <item itemvalue="JUnit.TestEntityGenerator.testGetAttributeImport_ControllerArchitecture" />
+        <item itemvalue="JUnit.TestEntityMethodsGenerator.testGenerateGettersAndSetters_WithManyRelationship" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,16 +185,5 @@
       <updated>1737913436072</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
