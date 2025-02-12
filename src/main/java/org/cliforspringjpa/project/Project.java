@@ -1,5 +1,6 @@
-package org.cliforspringjpa.domain;
+package org.cliforspringjpa.project;
 
+import org.cliforspringjpa.domain.Entity;
 import org.cliforspringjpa.exception.SpringProjectException;
 import org.cliforspringjpa.filecreator.FileCreator;
 import org.cliforspringjpa.generator.EntityGenerator;

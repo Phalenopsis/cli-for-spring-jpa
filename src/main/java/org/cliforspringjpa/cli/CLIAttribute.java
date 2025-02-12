@@ -2,7 +2,7 @@ package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.Attribute;
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.domain.Relationship;
 import org.cliforspringjpa.exception.*;
 import org.cliforspringjpa.utils.CaseManager;

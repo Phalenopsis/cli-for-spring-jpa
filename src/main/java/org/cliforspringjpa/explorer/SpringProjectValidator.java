@@ -1,6 +1,6 @@
 package org.cliforspringjpa.explorer;
 
-import org.cliforspringjpa.domain.ProjectPath;
+import org.cliforspringjpa.project.ProjectPath;
 import org.cliforspringjpa.exception.SpringProjectException;
 
 import java.io.File;

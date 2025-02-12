@@ -1,7 +1,7 @@
 package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.InputOrder;
-import org.cliforspringjpa.domain.ProjectPath;
+import org.cliforspringjpa.project.ProjectPath;
 import org.cliforspringjpa.exception.EndOfActionException;
 import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;

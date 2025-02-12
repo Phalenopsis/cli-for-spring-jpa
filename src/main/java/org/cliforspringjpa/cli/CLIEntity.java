@@ -2,7 +2,7 @@ package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.Attribute;
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.exception.EndEntityException;
 import org.cliforspringjpa.exception.EndOfActionException;
 import org.cliforspringjpa.exception.ExitException;

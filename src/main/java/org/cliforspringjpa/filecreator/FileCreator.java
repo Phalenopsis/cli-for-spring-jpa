@@ -1,8 +1,6 @@
 package org.cliforspringjpa.filecreator;
 
 import org.cliforspringjpa.domain.FileLines;
-import org.cliforspringjpa.domain.ProjectPath;
-import org.cliforspringjpa.exception.SpringProjectException;
 
 import java.io.File;
 import java.io.IOException;

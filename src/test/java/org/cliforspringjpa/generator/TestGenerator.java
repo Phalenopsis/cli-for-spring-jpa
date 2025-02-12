@@ -1,7 +1,7 @@
 package org.cliforspringjpa.generator;
 
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.ProjectPath;
+import org.cliforspringjpa.project.ProjectPath;
 import org.cliforspringjpa.exception.SpringProjectException;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
