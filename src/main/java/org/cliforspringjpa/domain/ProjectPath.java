@@ -51,7 +51,6 @@ public class ProjectPath {
             try {
                 Files.createDirectory(Paths.get(packagePath + File.separator + "domain"));
             } catch (FileAlreadyExistsException ignored) {
-                System.out.println("ignored");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

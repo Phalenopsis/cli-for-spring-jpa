@@ -107,7 +107,6 @@ public class PomXmlExplorer {
 
     private boolean isMainInside(String packageName, String projectName) {
         String packagePath = getDirectoryPath(packageName);
-        System.out.println(projectName);
         String javaPath = System.getProperty("user.dir") + File.separator
                 + "src" + File.separator
                 + "main" + File.separator

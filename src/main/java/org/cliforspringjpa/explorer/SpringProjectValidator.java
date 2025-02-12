@@ -36,7 +36,6 @@ public class SpringProjectValidator {
 
     private void verifyPackageDir() throws SpringProjectException {
         String packageDirPath = ProjectPath.getInstance().getAbsoluteMainPackagePath();
-        System.out.println(packageDirPath);
         File srcDirFile = new File(packageDirPath);
         if(!(srcDirFile.exists() && srcDirFile.isDirectory())) {
             throw new SpringProjectException("package " + packageDirPath + " directory does not exists.");
