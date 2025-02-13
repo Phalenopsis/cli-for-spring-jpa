@@ -20,7 +20,10 @@ public class FileLines {
     }
 
     public void setPackageName(String pPackageName) {
-        packageName = pPackageName + ";";
+        if(!pPackageName.endsWith(";")) {
+            pPackageName = pPackageName + ";";
+        }
+        packageName = pPackageName;
     }
 
     public void addImport(String pImport) {
