@@ -56,6 +56,7 @@ public class EntityGenerator extends Generator{
     @Override
     protected void generateClassMethods() {
         EntityMethodsGenerator generator = new EntityMethodsGenerator(entity);
-        fileLines.addMethods(generator.generateGettersAndSetters());
+        List<String> methodsLines = generator.generateGettersAndSetters();
+        fileLines.addMethods(methodsLines);
     }
 }
