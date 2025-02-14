@@ -98,6 +98,10 @@ public abstract class Generator {
         return fileLines;
     }
 
+    public void setFileLines(FileLines fileLines) {
+        this.fileLines = fileLines;
+    }
+
     protected abstract Set<String> generateImports();
 
     protected abstract List<String> generateClassDeclaration();
