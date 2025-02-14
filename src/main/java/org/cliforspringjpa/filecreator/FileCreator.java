@@ -28,7 +28,7 @@ public class FileCreator {
     public void createFile() {
         File file = new File(fileLines.getDirectoryPath() + File.separator + fileLines.getClassName() + ".java");
         try {
-            if(file.createNewFile()) {
+            if(file.exists() || file.createNewFile()) {
                 FileFiller filler = new FileFiller(fileLines);
                 filler.fillFile(file);
             } else {
