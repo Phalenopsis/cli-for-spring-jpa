@@ -1,7 +1,7 @@
 package org.cliforspringjpa;
 
 import org.cliforspringjpa.cli.CLIOrchestrator;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;
 import org.cliforspringjpa.exception.SpringProjectException;
@@ -10,7 +10,7 @@ import org.cliforspringjpa.explorer.SpringProjectValidator;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class        Main {
+public class Main {
     public static void main(String[] args) {
         boolean runing = true;
         try {
