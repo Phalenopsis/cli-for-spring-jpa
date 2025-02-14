@@ -12,7 +12,7 @@ public class ParsedEntity {
     private final List<String> classDeclaration = new ArrayList<>();
     private List<String> actualAttributeDeclaration = new ArrayList<>();
     private String actualAttribute;
-    private final List<String> methods = new ArrayList<>();
+    private List<String> methods = new ArrayList<>();
     private int blockCounter = 0;
 
     public ParsedEntity(String className) {
@@ -95,6 +95,8 @@ public class ParsedEntity {
         if(line.contains("}") && blockCounter == 0) {
             methods.add("\n");
             isInMethodDeclaration = false;
+            fileLines.addMethods(methods);
+            methods = new ArrayList<>();
         }
     }
 
