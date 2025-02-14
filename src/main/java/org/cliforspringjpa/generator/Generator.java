@@ -2,7 +2,7 @@ package org.cliforspringjpa.generator;
 
 import org.cliforspringjpa.domain.Entity;
 import org.cliforspringjpa.domain.FileLines;
-import org.cliforspringjpa.domain.ProjectPath;
+import org.cliforspringjpa.project.ProjectPath;
 import org.cliforspringjpa.exception.SpringProjectException;
 import org.cliforspringjpa.utils.CaseManager;
 
@@ -96,6 +96,10 @@ public abstract class Generator {
 
     public FileLines getFileLines() {
         return fileLines;
+    }
+
+    public void setFileLines(FileLines fileLines) {
+        this.fileLines = fileLines;
     }
 
     protected abstract Set<String> generateImports();

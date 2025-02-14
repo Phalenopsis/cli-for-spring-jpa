@@ -1,8 +1,6 @@
 package org.cliforspringjpa.filecreator;
 
 import org.cliforspringjpa.domain.FileLines;
-import org.cliforspringjpa.domain.ProjectPath;
-import org.cliforspringjpa.exception.SpringProjectException;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +28,7 @@ public class FileCreator {
     public void createFile() {
         File file = new File(fileLines.getDirectoryPath() + File.separator + fileLines.getClassName() + ".java");
         try {
-            if(file.createNewFile()) {
+            if(file.exists() || file.createNewFile()) {
                 FileFiller filler = new FileFiller(fileLines);
                 filler.fillFile(file);
             } else {

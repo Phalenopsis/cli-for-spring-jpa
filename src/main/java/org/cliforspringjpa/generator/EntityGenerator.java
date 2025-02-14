@@ -2,7 +2,7 @@ package org.cliforspringjpa.generator;
 
 import org.cliforspringjpa.domain.Attribute;
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.domain.Relationship;
 import org.cliforspringjpa.exception.SpringProjectException;
 
@@ -35,7 +35,7 @@ public class EntityGenerator extends Generator{
     @Override
     protected void generateClassAttributes() throws SpringProjectException {
         EntityAttributeLineGenerator attributeLineGenerator = new EntityAttributeLineGenerator(entity);
-        for(Attribute attribute: entity.getSet()) {
+        for(Attribute attribute: entity.getAttributes()) {
             if(attribute.getRelationship() != Relationship.NO_RELATION)
                 fileLines.addImport(getImport(attribute));
             if(attribute.getRelationship().equals(Relationship.ONE_TO_MANY)
@@ -56,6 +56,7 @@ public class EntityGenerator extends Generator{
     @Override
     protected void generateClassMethods() {
         EntityMethodsGenerator generator = new EntityMethodsGenerator(entity);
-        fileLines.addMethods(generator.generateGettersAndSetters());
+        List<String> methodsLines = generator.generateGettersAndSetters();
+        fileLines.addMethods(methodsLines);
     }
 }

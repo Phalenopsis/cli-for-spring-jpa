@@ -1,12 +1,14 @@
 package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.InputOrder;
-import org.cliforspringjpa.domain.ProjectPath;
+import org.cliforspringjpa.explorer.EntitiesExplorer;
+import org.cliforspringjpa.project.ProjectPath;
 import org.cliforspringjpa.exception.EndOfActionException;
 import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;
 import org.cliforspringjpa.exception.SpringProjectException;
 
+import java.io.IOException;
 import java.util.*;
 
 public class CLIOrchestrator {
@@ -42,6 +44,13 @@ public class CLIOrchestrator {
     public void run() throws SpringProjectException, NoScannerException, ExitException {
         explain();
         askArchitecture();
+        try {
+            EntitiesExplorer explorer = new EntitiesExplorer();
+            explorer.findEntities();
+        } catch (IOException ignored) {
+
+        }
+
         askMain();
 
     }

@@ -2,7 +2,7 @@ package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.Attribute;
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.domain.Relationship;
 import org.cliforspringjpa.exception.*;
 import org.cliforspringjpa.utils.CaseManager;
@@ -120,6 +120,7 @@ public class CLIAttribute {
     private void askForMasterInRelationship(Entity entity, Attribute attribute) throws NoScannerException, EndOfActionException, ExitException {
         Project project = Project.getInstance();
         Entity attributeType = project.getEntity(attribute.getType());
+        attributeType.setModified(true);
         String question = "\t\tWhich one will master relationship ? \n"
                 + "\t\t1- " + entity.getName() + "\n"
                 + "\t\t2- " + attributeType.getName() + "\n";

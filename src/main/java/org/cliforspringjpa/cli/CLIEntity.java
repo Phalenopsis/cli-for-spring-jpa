@@ -2,7 +2,7 @@ package org.cliforspringjpa.cli;
 
 import org.cliforspringjpa.domain.Attribute;
 import org.cliforspringjpa.domain.Entity;
-import org.cliforspringjpa.domain.Project;
+import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.exception.EndEntityException;
 import org.cliforspringjpa.exception.EndOfActionException;
 import org.cliforspringjpa.exception.ExitException;
@@ -14,9 +14,15 @@ public class CLIEntity {
             System.out.println("What is your entity's name ?");
             argument = CLIInput.getInstance().askOpenedPascalCaseQuestion();
         }
-        Entity entity = new Entity(argument);
-        entity.addAttribute(new Attribute("id", "Long"));
-        System.out.println("\tAuto generated id of type Long");
+        Entity entity;
+        if(Attribute.getNewTypeList().contains(argument)) {
+            entity = Project.getInstance().getEntity(argument);
+        } else {
+            entity = new Entity(argument);
+            entity.addAttribute(new Attribute("id", "Long"));
+            entity.setModified(true);
+            System.out.println("\tAuto generated id of type Long");
+        }
         boolean run = true;
 
         while(run) {

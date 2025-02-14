@@ -1,6 +1,7 @@
 package org.cliforspringjpa.domain;
 
 import org.cliforspringjpa.exception.SpringProjectException;
+import org.cliforspringjpa.project.ProjectPath;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
