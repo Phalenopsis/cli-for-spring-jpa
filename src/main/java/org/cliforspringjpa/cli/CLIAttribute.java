@@ -120,6 +120,7 @@ public class CLIAttribute {
     private void askForMasterInRelationship(Entity entity, Attribute attribute) throws NoScannerException, EndOfActionException, ExitException {
         Project project = Project.getInstance();
         Entity attributeType = project.getEntity(attribute.getType());
+        attributeType.setModified(true);
         String question = "\t\tWhich one will master relationship ? \n"
                 + "\t\t1- " + entity.getName() + "\n"
                 + "\t\t2- " + attributeType.getName() + "\n";

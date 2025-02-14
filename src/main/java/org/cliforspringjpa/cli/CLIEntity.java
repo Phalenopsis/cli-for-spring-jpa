@@ -14,9 +14,15 @@ public class CLIEntity {
             System.out.println("What is your entity's name ?");
             argument = CLIInput.getInstance().askOpenedPascalCaseQuestion();
         }
-        Entity entity = new Entity(argument);
-        entity.addAttribute(new Attribute("id", "Long"));
-        System.out.println("\tAuto generated id of type Long");
+        Entity entity;
+        if(Attribute.getNewTypeList().contains(argument)) {
+            entity = Project.getInstance().getEntity(argument);
+        } else {
+            entity = new Entity(argument);
+            entity.addAttribute(new Attribute("id", "Long"));
+            entity.setModified(true);
+            System.out.println("\tAuto generated id of type Long");
+        }
         boolean run = true;
 
         while(run) {
