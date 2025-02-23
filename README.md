@@ -17,3 +17,13 @@ hint ```nico make entity``` and follow questions to create your entity.
 ## Repeat third step as you need
 
 ## Enjoy
+
+## Version
+0.2
+- update entity
+- consider previous entities when create entity
+
+0.1 
+- create new entity
+
+
