@@ -14,7 +14,8 @@ public class Main {
     public static void main(String[] args) {
         boolean runing = true;
         try {
-            SpringProjectValidator.getInstance().verifyProject();
+            SpringProjectValidator validator = new SpringProjectValidator();
+            validator.verifyProject();
         } catch (SpringProjectException e) {
             runing = false;
             System.err.println(e.getMessage());
@@ -42,6 +43,5 @@ public class Main {
         } catch (SpringProjectException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
