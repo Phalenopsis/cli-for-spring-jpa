@@ -19,11 +19,9 @@ hint ```nico make entity``` and follow questions to create your entity.
 ## Enjoy
 
 ## Version
-0.2
+0.1
 - update entity
 - consider previous entities when create entity
-
-0.1 
 - create new entity
 
 
