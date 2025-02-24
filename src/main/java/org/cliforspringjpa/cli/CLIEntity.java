@@ -17,12 +17,13 @@ public class CLIEntity {
         Entity entity;
         if(Attribute.getNewTypeList().contains(argument)) {
             entity = Project.getInstance().getEntity(argument);
+            System.out.println("Entity " + argument + " already exists. It will be update");
         } else {
             entity = new Entity(argument);
             entity.addAttribute(new Attribute("id", "Long"));
-            entity.setModified(true);
             System.out.println("\tAuto generated id of type Long");
         }
+        entity.setModified(true);
         boolean run = true;
 
         while(run) {
