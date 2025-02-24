@@ -37,7 +37,6 @@ public class CLIEntity {
                 run = false;
                 System.out.println("Entity " + entity.getName() + " finished.");
             }
-
         }
         Project.getInstance().addEntity(entity);
     }
