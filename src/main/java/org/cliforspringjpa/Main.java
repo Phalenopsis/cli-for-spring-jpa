@@ -23,7 +23,8 @@ public class Main {
 
         if(runing) {
             try(Scanner scanner = new Scanner(System.in)) {
-                CLIOrchestrator.getInstance(scanner).run();
+                CLIOrchestrator cli = new CLIOrchestrator(scanner);
+                cli.run();
             } catch (SpringProjectException | NoScannerException e) {
                 throw new RuntimeException(e);
             } catch (ExitException e) {

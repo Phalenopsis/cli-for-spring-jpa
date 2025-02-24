@@ -10,13 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/domain/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/domain/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/domain/ParsedEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/domain/ParsedEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/cli/CLIInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/cli/CLIInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/cli/CLIOrchestrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/cliforspringjpa/cli/CLIOrchestrator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,13 +74,13 @@
     "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/considere-previous-entities",
+    "git-widget-placeholder": "feature/update-previous-entity",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/nlero/Documents/WCS/CDA/spring/testcli",
     "onboarding.tips.debug.path": "C:/Users/nlero/Documents/WCS/CDA/spring/cli-for-spring-jpa/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "configurable.group.language"
   }
@@ -166,6 +163,19 @@
       <option name="PACKAGE_NAME" value="org.cliforspringjpa.domain" />
       <option name="MAIN_CLASS_NAME" value="org.cliforspringjpa.domain.TestInputOrder" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="cli-for-spring-jpa" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="cli-for-spring-jpa" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
