@@ -20,10 +20,8 @@ public class Project {
     private final HashMap<String, ParsedEntity> parsedEntities = new HashMap<>();
 
     public void addParsedEntity(ParsedEntity parsedEntity) {
-        String entityName = parsedEntity.getFileLines().getClassName();
-        parsedEntities.put(entityName, parsedEntity);
-        Entity entity = new Entity(entityName);
-        addEntity(entity);
+        parsedEntities.put(parsedEntity.getEntity().getName(), parsedEntity);
+        addEntity(parsedEntity.getEntity());
     }
 
     public HashMap<String, ParsedEntity> getParsedEntities() {
