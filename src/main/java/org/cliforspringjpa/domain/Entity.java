@@ -35,6 +35,13 @@ public class Entity {
         isModified = modified;
     }
 
+    public boolean alreadyHasAttribute(String pAttributeName) {
+        for(Attribute attribute : attributes) {
+            if(attribute.getName().equals(pAttributeName)) return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Entity{" +
