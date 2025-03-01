@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntityMethodsGenerator {
-    private Entity entity;
+    private final Entity entity;
 
     EntityMethodsGenerator(Entity pEntity) {
         entity = pEntity;
@@ -18,6 +18,7 @@ public class EntityMethodsGenerator {
     public List<String> generateGettersAndSetters(){
         List<String> methodsLines = new ArrayList<>();
         for(Attribute attribute: entity.getAttributes()) {
+            if(attribute.isDone()) continue;
             if(attribute.getRelationship().equals(Relationship.ONE_TO_MANY)
             || attribute.getRelationship().equals(Relationship.MANY_TO_MANY)) {
                 methodsLines.addAll(generateManyGettersAndSetters(attribute));

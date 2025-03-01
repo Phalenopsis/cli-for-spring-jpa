@@ -12,29 +12,14 @@ import java.io.IOException;
 import java.util.*;
 
 public class CLIOrchestrator {
-    private static CLIOrchestrator instance;
-    private final Scanner scanner;
-
     private static final String NICO_MAKE_ENTITY = "nico make entity";
-
     public static final Set<String> ORDERS = Set.of(NICO_MAKE_ENTITY);
 
-    public static CLIOrchestrator getInstance(Scanner scanner) {
-        if (Objects.isNull(instance)) {
-            instance = new CLIOrchestrator(scanner);
-        }
-        return instance;
-    }
+    private final Scanner scanner;
 
-    public static CLIOrchestrator getInstance() throws NoScannerException {
-        if (Objects.isNull(instance)) {
-            throw new NoScannerException("No scanner");
-        }
-        return instance;
-    }
-
-    private CLIOrchestrator(Scanner pScanner) {
+    public CLIOrchestrator(Scanner pScanner) {
         scanner = pScanner;
+        CLIInput.getInstance(scanner);
     }
 
     public Scanner getScanner() {

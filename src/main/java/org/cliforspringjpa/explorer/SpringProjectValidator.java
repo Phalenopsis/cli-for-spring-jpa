@@ -7,18 +7,7 @@ import java.io.File;
 import java.util.Objects;
 
 public class SpringProjectValidator {
-    private static SpringProjectValidator instance;
-
-    public static SpringProjectValidator getInstance() {
-        if (Objects.isNull(instance)) {
-            return new SpringProjectValidator();
-        }
-        return instance;
-    }
-
-    private SpringProjectValidator() {
-
-    }
+    public SpringProjectValidator() { }
 
     public void verifyProject() throws SpringProjectException {
         PomXmlExplorer.getInstance().verifyPomXml();

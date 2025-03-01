@@ -18,6 +18,11 @@ public class CLIAttribute {
 
     public Attribute askForAttribute() throws NoScannerException, ExitException, EndEntityException, EndOfActionException {
         String attributeName = askForAttributeName();
+        if(entity.alreadyHasAttribute(attributeName)) {
+            String response = "Entity " + entity.getName() + " has already an attribute named " + attributeName;
+            System.out.println(response);
+            return askForAttribute();
+        }
         String attributeType = askForAttributeType();
         Attribute attribute = new Attribute(attributeName, attributeType);
         System.out.println(attributeName + " de type " + attributeType);

@@ -14,6 +14,7 @@ public class Attribute {
     private final String type;
     private Relationship relationship = Relationship.NO_RELATION;
     private boolean relationshipMaster;
+    private boolean isDone = false;
 
     public Attribute(String pName, String pType) {
         name = pName;
@@ -71,4 +72,11 @@ public class Attribute {
         this.relationshipMaster = relationshipMaster;
     }
 
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
 }

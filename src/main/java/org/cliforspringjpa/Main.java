@@ -14,7 +14,8 @@ public class Main {
     public static void main(String[] args) {
         boolean runing = true;
         try {
-            SpringProjectValidator.getInstance().verifyProject();
+            SpringProjectValidator validator = new SpringProjectValidator();
+            validator.verifyProject();
         } catch (SpringProjectException e) {
             runing = false;
             System.err.println(e.getMessage());
@@ -23,7 +24,8 @@ public class Main {
 
         if(runing) {
             try(Scanner scanner = new Scanner(System.in)) {
-                CLIOrchestrator.getInstance(scanner).run();
+                CLIOrchestrator cli = new CLIOrchestrator(scanner);
+                cli.run();
             } catch (SpringProjectException | NoScannerException e) {
                 throw new RuntimeException(e);
             } catch (ExitException e) {
@@ -41,6 +43,5 @@ public class Main {
         } catch (SpringProjectException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

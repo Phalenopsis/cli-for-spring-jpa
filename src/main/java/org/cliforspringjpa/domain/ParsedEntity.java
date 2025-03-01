@@ -9,6 +9,8 @@ public class ParsedEntity {
     private boolean isInAttributeDeclaration = false;
     private boolean isInMethodDeclaration = false;
 
+    private final Entity entity;
+
     private final List<String> classDeclaration = new ArrayList<>();
     private List<String> actualAttributeDeclaration = new ArrayList<>();
     private String actualAttribute;
@@ -17,6 +19,11 @@ public class ParsedEntity {
 
     public ParsedEntity(String className) {
         fileLines = new FileLines(className);
+        entity = new Entity(className);
+    }
+
+    public Entity getEntity() {
+        return entity;
     }
 
     public void parseLine(String line) {
@@ -65,8 +72,14 @@ public class ParsedEntity {
                 || trimmedLine.startsWith("public"))
                 && trimmedLine.endsWith(";")
         ) {
-            String lastTerm =  trimmedLine.split(" ")[2];
+            String[] lineArray = trimmedLine.split(" ");
+            String attributeType = lineArray[1];
+            String lastTerm =  lineArray[2];
+
             actualAttribute = lastTerm.substring(0, lastTerm.length() - 1);
+            Attribute attribute = new Attribute(actualAttribute, attributeType);
+            attribute.setDone(true);
+            entity.addAttribute(attribute);
         }
         if(line.endsWith(";")) {
             isInAttributeDeclaration = false;
@@ -93,7 +106,7 @@ public class ParsedEntity {
         if(line.contains("{")) blockCounter += 1;
         if(line.contains("}")) blockCounter -= 1;
         if(line.contains("}") && blockCounter == 0) {
-            methods.add("\n");
+            methods.add("");
             isInMethodDeclaration = false;
             fileLines.addMethods(methods);
             methods = new ArrayList<>();

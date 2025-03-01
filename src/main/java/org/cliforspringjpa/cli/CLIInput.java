@@ -9,14 +9,20 @@ import java.util.*;
 
 public class CLIInput {
     private static CLIInput instance;
-    private Scanner scanner;
+    private final Scanner scanner;
 
     private final Set<String> specialResponses = Set.of("\\help");
 
     public static CLIInput getInstance() throws NoScannerException {
         if(Objects.isNull(instance)) {
-            Scanner scannerFromOrchestrator = CLIOrchestrator.getInstance().getScanner();
-            instance = new CLIInput(scannerFromOrchestrator);
+            throw new NoScannerException("No scanner for CLIInput");
+        }
+        return instance;
+    }
+
+    public static CLIInput getInstance(Scanner scanner) {
+        if(Objects.isNull(instance)) {
+            instance = new CLIInput(scanner);
         }
         return instance;
     }
