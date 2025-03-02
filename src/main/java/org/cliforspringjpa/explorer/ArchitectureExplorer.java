@@ -15,7 +15,7 @@ public class ArchitectureExplorer {
             return;
         }
         File modelDirFile = new File(path + File.separator + "model");
-        if(modelDirFile.exists() && domainDirFile.isDirectory()) {
+        if(modelDirFile.exists() && modelDirFile.isDirectory()) {
             ProjectPath.getInstance().setEntityArchitecture(false);
         }
     }
