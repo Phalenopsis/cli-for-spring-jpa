@@ -19,6 +19,8 @@ hint ```nico make entity``` and follow questions to create your entity.
 ## Enjoy
 
 ## Version
+0.2 CRUD
+- attributes and methods are now insert in order of creation
 0.1
 - update entity
 - consider previous entities when create entity
