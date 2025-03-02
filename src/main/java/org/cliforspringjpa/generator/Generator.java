@@ -38,8 +38,16 @@ public abstract class Generator {
         boolean isEntityArch = ProjectPath.getInstance().isEntityArchitecture();
         String mainPackageName = ProjectPath.getInstance().getPackageName();
         String endTerm = isEntityArch ? ".domain." + CaseManager.switchToKebabCase(entity.getName())
-                : "." + CaseManager.switchToKebabCase(generatorType);
+                : "." + (generatorType.equals("Entity") ? "model" : CaseManager.switchToKebabCase(generatorType));
         return mainPackageName + endTerm;
+    }
+
+    public String getEntityFullyQualifiedClassName() throws SpringProjectException {
+        boolean isEntityArch = ProjectPath.getInstance().isEntityArchitecture();
+        String mainPackageName = ProjectPath.getInstance().getPackageName();
+        String endTerm = isEntityArch ? ".domain." + CaseManager.switchToKebabCase(entity.getName())
+                : "." + "model." + CaseManager.switchToKebabCase(entity.getName());
+        return mainPackageName + endTerm + entity.getName();
     }
 
     public String getExtendedFileName() {
@@ -102,7 +110,7 @@ public abstract class Generator {
         this.fileLines = fileLines;
     }
 
-    protected abstract Set<String> generateImports();
+    protected abstract Set<String> generateImports() throws SpringProjectException;
 
     protected abstract List<String> generateClassDeclaration();
 
