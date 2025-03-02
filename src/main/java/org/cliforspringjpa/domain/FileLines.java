@@ -8,7 +8,7 @@ public class FileLines {
     private String packageName;
     private final Set<String> imports = new HashSet<>();
     private List<String> classDeclaration = new ArrayList<>();
-    private final HashMap<String, List<String>> attributes = new HashMap<>();
+    private final LinkedHashMap<String, List<String>> attributes = new LinkedHashMap<>();
     private final List<String> methods = new ArrayList<>();
 
     public FileLines(String pClassName) {
@@ -46,7 +46,7 @@ public class FileLines {
         return classDeclaration;
     }
 
-    public HashMap<String, List<String>> getAttributes() {
+    public LinkedHashMap<String, List<String>> getAttributes() {
         return attributes;
     }
 

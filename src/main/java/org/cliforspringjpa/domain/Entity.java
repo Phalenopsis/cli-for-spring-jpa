@@ -1,11 +1,12 @@
 package org.cliforspringjpa.domain;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Entity {
     private final String name;
-    private final Set<Attribute> attributes = new HashSet<>();
+    private final LinkedHashSet<Attribute> attributes = new LinkedHashSet<>();
     private boolean isModified = false;
 
     public Entity(String pName) {
@@ -23,7 +24,7 @@ public class Entity {
         return name;
     }
 
-    public Set<Attribute> getAttributes() {
+    public LinkedHashSet<Attribute> getAttributes() {
         return attributes;
     }
 
