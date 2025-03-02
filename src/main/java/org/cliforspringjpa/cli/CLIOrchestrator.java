@@ -114,9 +114,13 @@ public class CLIOrchestrator {
         cli.ask(argument);
     }
 
-    private void askCLIRepository(String argument) throws NoScannerException, EndOfActionException, ExitException {
+    private void askCLIRepository(String argument) throws NoScannerException, ExitException {
         CLIRepository cli = new CLIRepository();
-        cli.ask(argument);
+        try {
+            cli.ask(argument);
+        } catch (EndOfActionException e) {
+            System.out.println("Repository creation aborted");
+        }
     }
 
     private void explainHelp() {

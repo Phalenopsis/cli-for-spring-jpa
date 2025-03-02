@@ -26,6 +26,10 @@ public class CLIRepository {
 
         } else {
             System.out.println(argument + " is not a recognized entity");
+            if(project.getEntitiesList().isEmpty()) {
+                System.out.println("There's no entity in project. Please make one before trying making repository");
+                throw new EndOfActionException();
+            }
             System.out.println("For memory, projects entities are :");
             for(String projectEntity : project.getEntitiesList()) {
                 System.out.println("\t" + projectEntity);
