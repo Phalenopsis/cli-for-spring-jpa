@@ -16,6 +16,7 @@ public class Project {
     private HashMap<String, Generator> generators = new HashMap<>();
     private HashMap<String, Entity> entities = new HashMap<>();
     private final Set<String> BASIC_TYPES = Set.of("String", "Long", "double", "int");
+    private Set<String> repositories = new HashSet<>();
 
     private final HashMap<String, ParsedEntity> parsedEntities = new HashMap<>();
 
@@ -103,5 +104,13 @@ public class Project {
             hasGenerated = true;
         }
         return hasGenerated;
+    }
+
+    public Set<String> getRepositories() {
+        return repositories;
+    }
+
+    public void addRepository(String repositoryEntity) {
+        repositories.add(repositoryEntity);
     }
 }
