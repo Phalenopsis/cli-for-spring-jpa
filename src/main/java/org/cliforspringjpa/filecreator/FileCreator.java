@@ -21,7 +21,6 @@ public class FileCreator {
             Files.createDirectory(Paths.get(absoluteDirectoryPath
             ));
         } catch (FileAlreadyExistsException ignored) {
-            System.out.println("ignored");
         }
     }
 
