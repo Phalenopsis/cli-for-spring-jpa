@@ -31,19 +31,21 @@ public class CLIInput {
         scanner = pScanner;
     }
 
-    public Boolean askBooleanQuestion() {
+    public Boolean askBooleanQuestion() throws EndOfActionException, ExitException {
         String response = getInput().toLowerCase(Locale.ROOT).trim();
         while (!response.isEmpty() && !response.equals("n") && !response.equals("y")) {
+            checkExit(response);
             System.out.println("I don't understand. Please hint Y or N");
             response = getInput().toLowerCase(Locale.ROOT);
         }
         return !response.equals("n");
     }
 
-    public String askOpenedPascalCaseQuestion() {
+    public String askOpenedPascalCaseQuestion() throws EndOfActionException, ExitException {
         String response;
         response = getInput();
         while(!CaseManager.isPascalCase(response)) {
+            checkExit(response);
             System.out.println("Please use PascalCase");
             response = getInput();
 
