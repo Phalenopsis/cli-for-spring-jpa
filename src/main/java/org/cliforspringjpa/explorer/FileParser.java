@@ -6,8 +6,7 @@ import org.cliforspringjpa.project.Project;
 import java.io.*;
 import java.util.Objects;
 
-public class EntityParser {
-    File file;
+public class EntityParser extends FileParser {
 
     public EntityParser(String pFilePath) {
         file = new File(pFilePath);
