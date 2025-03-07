@@ -1,24 +1,12 @@
 package org.cliforspringjpa.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.cliforspringjpa.explorer.parsedFile.ParsedFile;
 
-public class ParsedEntity {
-    private final FileLines fileLines;
-    private boolean isInClassDeclaration = false;
-    private boolean isInAttributeDeclaration = false;
-    private boolean isInMethodDeclaration = false;
-
+public class ParsedEntity extends ParsedFile {
     private final Entity entity;
 
-    private final List<String> classDeclaration = new ArrayList<>();
-    private List<String> actualAttributeDeclaration = new ArrayList<>();
-    private String actualAttribute;
-    private List<String> methods = new ArrayList<>();
-    private int blockCounter = 0;
-
     public ParsedEntity(String className) {
-        fileLines = new FileLines(className);
+        super(className);
         entity = new Entity(className);
     }
 
@@ -64,7 +52,8 @@ public class ParsedEntity {
         }
     }
 
-    private void parseAttributeDeclaration(String line) {
+    @Override
+    protected void parseAttributeDeclaration(String line) {
         actualAttributeDeclaration.add(line);
         String trimmedLine = line.trim();
         if ((trimmedLine.startsWith("private")
@@ -86,34 +75,5 @@ public class ParsedEntity {
             fileLines.addAttribute(actualAttribute, actualAttributeDeclaration);
             resetActualAttribute();
         }
-    }
-
-    private void resetActualAttribute() {
-        actualAttribute = null;
-        actualAttributeDeclaration = new ArrayList<>();
-    }
-
-    public void parseClassDeclaration(String line) {
-        classDeclaration.add(line);
-            if( line.contains("{")) {
-            isInClassDeclaration = false;
-            fileLines.setClassDeclaration(classDeclaration);
-        }
-    }
-
-    private void parseMethod(String line) {
-        methods.add(line);
-        if(line.contains("{")) blockCounter += 1;
-        if(line.contains("}")) blockCounter -= 1;
-        if(line.contains("}") && blockCounter == 0) {
-            methods.add("");
-            isInMethodDeclaration = false;
-            fileLines.addMethods(methods);
-            methods = new ArrayList<>();
-        }
-    }
-
-    public FileLines getFileLines() {
-        return fileLines;
     }
 }
