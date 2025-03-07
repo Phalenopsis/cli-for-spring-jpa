@@ -62,7 +62,7 @@ public class CLIOrchestrator {
         ArchitectureCLI cli = new ArchitectureCLI(scanner);
         boolean isEntityArchitecture = cli.askArchitecture();
         ProjectPath.getInstance().setEntityArchitecture(isEntityArchitecture);
-        System.out.println("You choose " + (isEntityArchitecture ? "Entity" : "Controller") + " architecture");
+        System.out.println("You choose " + (isEntityArchitecture ? "Entity" : "Layer") + " architecture");
     }
 
     private void askMain() throws NoScannerException, ExitException{
