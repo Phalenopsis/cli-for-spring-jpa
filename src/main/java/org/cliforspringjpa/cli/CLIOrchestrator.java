@@ -16,7 +16,7 @@ public class CLIOrchestrator {
     public static final Set<String> ORDERS = Set.of(NICO_MAKE_ENTITY, NICO_MAKE_REPOSITORY, HELP);
     private static final Map<String, String> ORDERS_EXPLAINED = new HashMap<>();
     static {
-        ORDERS_EXPLAINED.put(NICO_MAKE_ENTITY, "make en a new entity or update an existing entity");
+        ORDERS_EXPLAINED.put(NICO_MAKE_ENTITY, "make a new entity or update an existing entity");
         ORDERS_EXPLAINED.put(NICO_MAKE_REPOSITORY, "create a repository for an existing entity");
     }
 
