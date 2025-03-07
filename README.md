@@ -9,19 +9,24 @@ Copy this in your project directory.
 Launch it via terminal with ```java -jar cli-for-spring-jpa.jar``` 
 
 ## Second step : Choose your architecture
-It's explain in terminal
+It's explain in terminal.
 
 ## Third step : Make your entity
-hint ```nico make entity``` and follow questions to create your entity.
+Hint ```nico make entity``` and follow questions to create your entity.
+
+When you have at least one entity, you could create its repository with ```nico make repository```.
 
 ## Repeat third step as you need
 
 ## Enjoy
 
-## Version
-0.2 CRUD
-- attributes and methods are now insert in order of creation
-0.1
+## Versions
+### 0.2 CRUD
+- explore repositories
+- add repository creation
+- attributes and methods are now inserted in order of creation
+
+### 0.1
 - update entity
 - consider previous entities when create entity
 - create new entity
