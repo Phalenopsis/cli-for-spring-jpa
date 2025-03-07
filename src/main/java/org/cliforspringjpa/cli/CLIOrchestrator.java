@@ -34,7 +34,7 @@ public class CLIOrchestrator {
     public void run() throws SpringProjectException, NoScannerException, ExitException {
         explain();
 
-        if(ProjectPath.getInstance().hasNotArchitecture()) {
+        if(!ProjectPath.getInstance().hasArchitecture()) {
             askArchitecture();
         }
 
