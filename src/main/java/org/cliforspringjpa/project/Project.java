@@ -2,7 +2,9 @@ package org.cliforspringjpa.project;
 
 import org.cliforspringjpa.domain.Entity;
 import org.cliforspringjpa.domain.ParsedEntity;
+import org.cliforspringjpa.domain.ParsedRepository;
 import org.cliforspringjpa.exception.SpringProjectException;
+import org.cliforspringjpa.explorer.parsedFile.ParsedFile;
 import org.cliforspringjpa.filecreator.FileCreator;
 import org.cliforspringjpa.generator.EntityGenerator;
 import org.cliforspringjpa.generator.Generator;
@@ -16,19 +18,14 @@ public class Project {
     private HashMap<String, Generator> generators = new HashMap<>();
     private HashMap<String, Entity> entities = new HashMap<>();
     private final Set<String> BASIC_TYPES = Set.of("String", "Long", "double", "int");
-    private Set<String> repositories = new HashSet<>();
+    private final Set<String> repositories = new HashSet<>();
 
     private final HashMap<String, ParsedEntity> parsedEntities = new HashMap<>();
-
-    public void addParsedEntity(ParsedEntity parsedEntity) {
-        parsedEntities.put(parsedEntity.getEntity().getName(), parsedEntity);
-        addEntity(parsedEntity.getEntity());
-    }
+    private final HashMap<String, ParsedRepository> parsedRepositories = new HashMap<>();
 
     public HashMap<String, ParsedEntity> getParsedEntities() {
         return parsedEntities;
     }
-
 
     public static Project getInstance() {
         if(Objects.isNull(instance)) {
@@ -112,5 +109,26 @@ public class Project {
 
     public void addRepository(String repositoryEntity) {
         repositories.add(repositoryEntity);
+    }
+
+    public void addParsedFile(ParsedFile parsedFile) {
+        if(parsedFile instanceof ParsedEntity) {
+            addParsedEntity((ParsedEntity) parsedFile);
+        } else if (parsedFile instanceof ParsedRepository) {
+            addParsedRepository((ParsedRepository) parsedFile);
+        }
+    }
+
+    private void addParsedEntity(ParsedEntity parsedEntity) {
+        parsedEntities.put(parsedEntity.getEntity().getName(), parsedEntity);
+        addEntity(parsedEntity.getEntity());
+    }
+
+    private void addParsedRepository(ParsedRepository parsedRepository) {
+        String className = parsedRepository.getFileLines().getClassName();
+        String repository = "Repository";
+        String entityName = className.substring(0, className.length() - repository.length());
+        parsedRepositories.put(entityName, parsedRepository);
+        addRepository(entityName);
     }
 }
