@@ -1,11 +1,14 @@
 package org.cliforspringjpa.domain;
 
+import org.cliforspringjpa.exception.IdNotFoundException;
+
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Entity {
     private final String name;
-    private final Set<Attribute> attributes = new HashSet<>();
+    private final LinkedHashSet<Attribute> attributes = new LinkedHashSet<>();
     private boolean isModified = false;
 
     public Entity(String pName) {
@@ -23,7 +26,7 @@ public class Entity {
         return name;
     }
 
-    public Set<Attribute> getAttributes() {
+    public LinkedHashSet<Attribute> getAttributes() {
         return attributes;
     }
 
@@ -48,5 +51,14 @@ public class Entity {
                 "name='" + name + '\'' +
                 ", set=" + attributes +
                 '}';
+    }
+
+    public String getIdType() throws IdNotFoundException {
+        for(Attribute attribute: attributes) {
+            if(attribute.getName().equals("id")) {
+                return attributes.getFirst().getType();
+            }
+        }
+        throw new IdNotFoundException(name);
     }
 }

@@ -1,32 +1,31 @@
 package org.cliforspringjpa.explorer;
 
-import org.cliforspringjpa.domain.ParsedEntity;
+import org.cliforspringjpa.exception.ParsedFileFactoryException;
+import org.cliforspringjpa.explorer.parsedFile.ParsedFile;
+import org.cliforspringjpa.explorer.parsedFile.ParsedFileFactory;
 import org.cliforspringjpa.project.Project;
 
 import java.io.*;
 import java.util.Objects;
 
-public class EntityParser {
-    File file;
+public class FileParser {
+    private final File file;
+    private final ClassType classType;
 
-    public EntityParser(String pFilePath) {
+    public FileParser(String pFilePath, ClassType pClassType) {
         file = new File(pFilePath);
-    }
-
-    public EntityParser(File pFile) {
-        file = pFile;
+        classType = pClassType;
     }
 
     public void parse() {
         try(BufferedReader reader = new BufferedReader(new FileReader(file.getAbsolutePath()))) {
             String line;
-            String entityName = file.getName().substring(0, file.getName().length() - ".java".length());
-            ParsedEntity parsedEntity = new ParsedEntity(entityName);
-
+            String className = file.getName().substring(0, file.getName().length() - ".java".length());
+            ParsedFile parsedFile = ParsedFileFactory.build(className, classType);
             while(Objects.nonNull(line = reader.readLine())) {
-                parsedEntity.parseLine(line);
+                parsedFile.parseLine(line);
             }
-            Project.getInstance().addParsedEntity(parsedEntity);
+            Project.getInstance().addParsedFile(parsedFile);
 
         } catch (FileNotFoundException e) {
             System.err.println("File " + file.getName() + " not found");
@@ -34,6 +33,8 @@ public class EntityParser {
         } catch (IOException e) {
             System.err.println("Another error than file not found int EntityParser.parse()");
             System.out.println("If this message appear, please do a issue on GitHub and explain context.");
+            System.err.println(e.getMessage());
+        } catch (ParsedFileFactoryException e) {
             System.err.println(e.getMessage());
         }
     }

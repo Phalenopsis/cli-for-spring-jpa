@@ -19,7 +19,8 @@ public abstract class Generator {
     public Generator(Entity pEntity) {
         entity = pEntity;
         setGeneratorType();
-        fileLines = new FileLines(entity.getName());
+        String classType = generatorType.equals("Entity") ? "" : generatorType;
+        fileLines = new FileLines(entity.getName() + classType);
     }
 
     public String getDirectoryPath() throws SpringProjectException {
@@ -38,7 +39,15 @@ public abstract class Generator {
         boolean isEntityArch = ProjectPath.getInstance().isEntityArchitecture();
         String mainPackageName = ProjectPath.getInstance().getPackageName();
         String endTerm = isEntityArch ? ".domain." + CaseManager.switchToKebabCase(entity.getName())
-                : "." + CaseManager.switchToKebabCase(generatorType);
+                : "." + (generatorType.equals("Entity") ? "model" : CaseManager.switchToKebabCase(generatorType));
+        return mainPackageName + endTerm;
+    }
+
+    public String getEntityFullyQualifiedClassName() throws SpringProjectException {
+        boolean isEntityArch = ProjectPath.getInstance().isEntityArchitecture();
+        String mainPackageName = ProjectPath.getInstance().getPackageName();
+        String endTerm = isEntityArch ? ".domain." + CaseManager.switchToKebabCase(entity.getName())
+                : "." + "model";
         return mainPackageName + endTerm;
     }
 
@@ -102,7 +111,7 @@ public abstract class Generator {
         this.fileLines = fileLines;
     }
 
-    protected abstract Set<String> generateImports();
+    protected abstract Set<String> generateImports() throws SpringProjectException;
 
     protected abstract List<String> generateClassDeclaration();
 

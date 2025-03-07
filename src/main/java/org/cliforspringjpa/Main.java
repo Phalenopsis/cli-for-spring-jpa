@@ -1,6 +1,7 @@
 package org.cliforspringjpa;
 
 import org.cliforspringjpa.cli.CLIOrchestrator;
+import org.cliforspringjpa.explorer.ProjectExplorer;
 import org.cliforspringjpa.project.Project;
 import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;
@@ -12,17 +13,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        boolean runing = true;
-        try {
-            SpringProjectValidator validator = new SpringProjectValidator();
-            validator.verifyProject();
-        } catch (SpringProjectException e) {
-            runing = false;
-            System.err.println(e.getMessage());
-            System.err.println("CLI can't work, it isn't a Spring project");
-        }
+        boolean running = initialize();
 
-        if(runing) {
+        if(running) {
             try(Scanner scanner = new Scanner(System.in)) {
                 CLIOrchestrator cli = new CLIOrchestrator(scanner);
                 cli.run();
@@ -43,5 +36,20 @@ public class Main {
         } catch (SpringProjectException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static boolean initialize() {
+        boolean runing = true;
+        try {
+            SpringProjectValidator validator = new SpringProjectValidator();
+            validator.verifyProject();
+            ProjectExplorer explorer = new ProjectExplorer();
+            explorer.explore();
+        } catch (SpringProjectException e) {
+            runing = false;
+            System.err.println(e.getMessage());
+            System.err.println("CLI can't work, it isn't a Spring project");
+        }
+        return runing;
     }
 }

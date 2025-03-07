@@ -19,8 +19,8 @@ public class ArchitectureCLI {
                 A domain package will be created. For each of your entities, an associated package will be created.
                 In this package the entity class, a controller and a repository will then be created.
                 """;
-        String controllerArch = "In the controller architecture, all entities will in a model package, " +
-                "all controllers in a controller package and all repository in a repository package.";
+        String controllerArch = "In the layer architecture, all entities will in a model package, " +
+                "all controllers in a controller package and all repository in a repository package. They act as layers.";
         String schemaArch = getSchemaArch();
         String question = "So, do you prefer entity architecture ? (Y/n)";
         System.out.println(entityArch);
@@ -38,7 +38,7 @@ public class ArchitectureCLI {
     private String getSchemaArch() throws SpringProjectException {
         String schemaArchStart =
                 "                 " + bold("Entity Architecture") +
-                        "            #          " + bold("Controller Architecture") + "\n";
+                        "            #          " + bold("Layer Architecture") + "\n";
         String schemaArchMiddle = getSchemaArchMiddle();
         String schemaArchEnd =
                 """

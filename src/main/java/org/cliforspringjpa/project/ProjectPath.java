@@ -18,6 +18,7 @@ public class ProjectPath {
     private final String packagePath;
     private final String packageName;
     private boolean isEntityArchitecture;
+    private boolean hasArchitecture = false;
 
     public static ProjectPath getInstance() throws SpringProjectException {
         if(Objects.isNull(instance)) {
@@ -47,6 +48,7 @@ public class ProjectPath {
     }
 
     public void setEntityArchitecture(boolean entityArchitecture) {
+        hasArchitecture = true;
         isEntityArchitecture = entityArchitecture;
         if(isEntityArchitecture) {
             try {
@@ -76,5 +78,9 @@ public class ProjectPath {
             }
         }
         return directoryPath;
+    }
+
+    public boolean hasArchitecture() {
+        return hasArchitecture;
     }
 }

@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb497795-8fef-40d8-9ebe-2e1af257af57" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/cli_for_spring_jpa_jar/cli-for-spring-jpa.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -71,7 +74,7 @@
     "JUnit.TestProjectPath.testGetPackageName.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature/update-previous-entity",
+    "git-widget-placeholder": "feature/repository-generator",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/nlero/Documents/WCS/CDA/spring/testcli",
@@ -205,6 +208,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/cliforspringjpa/generator/EntityGenerator.java</url>
           <line>57</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/cliforspringjpa/cli/CLIInput.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

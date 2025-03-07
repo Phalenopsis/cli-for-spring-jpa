@@ -9,7 +9,7 @@ import org.cliforspringjpa.exception.ExitException;
 import org.cliforspringjpa.exception.NoScannerException;
 
 public class CLIEntity {
-    public void ask(String argument) throws NoScannerException {
+    public void ask(String argument) throws NoScannerException, EndOfActionException, ExitException {
         if(argument.isEmpty()) {
             System.out.println("What is your entity's name ?");
             argument = CLIInput.getInstance().askOpenedPascalCaseQuestion();
